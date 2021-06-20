@@ -11,6 +11,25 @@
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
+    
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        // Agrega credenciales de SDK
+        const mp = new MercadoPago('APP_USR-7eb0138a-189f-4bec-87d1-c0504ead5626', {
+            locale: 'es-AR'
+        });
+
+        // Inicializa el checkout
+        mp.checkout({
+            preference: {
+                id: 'YOUR_PREFERENCE_ID'
+            },
+            render: {
+                container: '#checkout-btn', // Indica dónde se mostrará el botón de pago
+                label: 'Pagar', // Cambia el texto del botón de pago (opcional)
+            }
+        });
+    </script>
 
     <link rel="stylesheet" href="/assets/category-landing.css" media="screen, print">
 
