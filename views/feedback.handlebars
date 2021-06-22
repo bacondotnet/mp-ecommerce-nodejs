@@ -21,8 +21,9 @@
 
     <div id="accessories-tab" class="as-accessories-details">
       <div class="as-accessories" id="as-accessories">
-        <div id="feedbackTitleBG" class="as-searchnav-placeholder" style="height: 77px; border-bottom: 1px solid #d6d6d6; text-align: center;">
-            <h2 id="feedbackTitle" class="as-filter-button-text" style="line-height: 77px; color: #fff;"></h2>
+        <div id="feedbackTitleBG" class="as-searchnav-placeholder"
+          style="height: 77px; border-bottom: 1px solid #d6d6d6; text-align: center;">
+          <h2 id="feedbackTitle" class="as-filter-button-text" style="line-height: 77px; color: #fff;"></h2>
         </div>
 
         <div class="as-accessories-results  as-search-desktop">
@@ -34,22 +35,23 @@
             <p>ID de preferencia: <span id="data-preference"></span></p>
           </div>
 
-          <button id="store-btn" class="mercadopago-button" style="margin-top: 40px; margin-left: 40px;">Volver a la tienda</button>
+          <button id="store-btn" class="mercadopago-button" style="margin-top: 40px; margin-left: 40px;">Volver a la
+            tienda</button>
         </div>
-        
+
         <script>
           document.addEventListener("DOMContentLoaded", function () {
             var parameters = new URLSearchParams(window.location.search);
             var feedBackTitle = "";
             var backgroundColor = "#CFD8DC";
-            
+
             if (parameters.get("feedback") == "failure") {
               feedBackTitle = "Compra no finalizada";
               backgroundColor = "#D32F2F";
-            } else if(parameters.get("feedback") == "pending") {
+            } else if (parameters.get("feedback") == "pending") {
               feedBackTitle = "Aprobación pendiente";
               backgroundColor = "#FFA000";
-            } else if(parameters.get("feedback") == "success") {
+            } else if (parameters.get("feedback") == "success") {
               feedBackTitle = "¡Compra aprobada!";
               backgroundColor = "#388E3C";
 
@@ -59,13 +61,13 @@
               document.getElementById("data-preference").textContent = parameters.get("preference_id");
               document.getElementById("payment-data").style.display = "block";
             }
-            
-            document.getElementById("feedbackTitle").textContent  = feedBackTitle;
+
+            document.getElementById("feedbackTitle").textContent = feedBackTitle;
             document.getElementById("feedbackTitleBG").style.backgroundColor = backgroundColor;
           });
 
           document.getElementById("store-btn").addEventListener("click", function () {
-            window.location.href = "http://localhost:3000/";
+            window.location.href = "https://bacondotnet-mp-commerce-nodej.herokuapp.com/";
           });
         </script>
       </div>

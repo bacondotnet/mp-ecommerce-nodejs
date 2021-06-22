@@ -1,6 +1,6 @@
 <div class="as-search-wrapper" role="main">
     <script src="https://www.mercadopago.com/v2/security.js" view="item" output="deviceId"></script>
-    
+
     <div class="as-navtuck-wrapper">
         <div class="as-l-fullwidth  as-navtuck" data-events="event52">
             <div>
@@ -93,7 +93,8 @@
                                 </h3>
                             </div>
 
-                            <button id="checkout-btn" class="mercadopago-button" style="display: none;">Pagar la compra</button>
+                            <button id="checkout-btn" class="mercadopago-button" style="display: none;">Pagar la
+                                compra</button>
 
                         </div>
 
@@ -114,7 +115,7 @@
                                     },
                                     data: JSON.stringify({
                                         title: parameters.get("title"),
-                                        picture_url: parameters.get("img"),
+                                        picture_url: "https://bacondotnet-mp-commerce-nodej.herokuapp.com" + parameters.get("img").substr(1),
                                         quantity: parameters.get("unit"),
                                         unit_price: parameters.get("price"),
                                     }),
