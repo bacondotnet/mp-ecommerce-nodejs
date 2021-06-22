@@ -35,6 +35,7 @@ app.get("/feedback", function (req, res) {
 });
 
 app.post("/create_preference", (req, res) => {
+  console.log(req.body.picture_url)
   let preference = {
     items: [
       {
